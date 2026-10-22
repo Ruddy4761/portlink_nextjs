@@ -1,0 +1,80 @@
+@media (min-width: 961px) {
+  .w.nav {
+    max-width: 1540px;
+    padding: 8px 6px;
+  }
+
+  .brand {
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  .brand img {
+    width: 54px;
+    height: 54px;
+  }
+
+  nav .l {
+    padding: 8px 11px;
+    font-size: 16px;
+  }
+
+  .art {
+    stroke: #9eb9ec;
+    stroke-width: 2.2;
+    opacity: 0.95;
+    filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.9));
+  }
+
+  .art > path:first-of-type {
+    stroke: #8aa9e5;
+    stroke-width: 2.8;
+  }
+}
+/* icon + label layout */
+nav .l,
+.acts .btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.acts .btn { display: inline-flex; }
+
+/* icons */
+.ni {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  color: var(--blue);
+  transition: color .3s;
+}
+.nc {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  opacity: .6;
+  margin-left: -2px;
+}
+
+/* turn white on hover, focus and the active (Home) pill */
+nav .l:hover .ni,
+nav .l:focus-visible .ni,
+nav li:hover > .l .ni,
+nav li:focus-within > .l .ni,
+nav .l.on .ni {
+  color: #fff;
+}
+
+/* buttons: icon follows the button text colour */
+.acts .btn .ni { color: currentColor; }
+
+/* desktop: tighten spacing so 6 icons + labels still fit on one row */
+@media (min-width: 961px) {
+  nav .l { gap: 7px; padding: 8px 10px; }
+  .ni { width: 18px; height: 18px; }
+}
+
+/* narrow laptops: hide the icons rather than let the nav wrap */
+@media (min-width: 961px) and (max-width: 1250px) {
+  nav .l > .ni { display: none; }
+}
